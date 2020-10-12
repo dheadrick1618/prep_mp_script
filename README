@@ -1,0 +1,61 @@
+Created by : Devin Headrick on 09/24/2020
+
+Created      : 09/28/2020
+Last Editted : 10/11/2020
+
+Description:
+  This script will take a morning problem tar.gz file, extract it, reaname the
+    folder within it, and prepend a custom header to the soln *.py file. If no
+    initial .py file is provided it will create one and prepend the header. The
+    script will then open the .py soln file within Atom (IDE). Now your ready!
+
+Included Files:
+  prep_mp.sh
+  custom_mp_header.txt
+  README
+
+Setup Instructions:
+  1.If necessary change the script_path var to wherever you place this file so
+    it may be called within any directory path via 'bash prep_mp.sh ---'.
+    As far as my beginner knowledge goes it seems most appropriate to place
+    it in the /usr/local/bin directory.
+  2.You must place the custom_mp_header.txt file in the same place as the script
+    in order for this to work properly.
+  3. Add your name to the custom_mp_header.txt file
+
+Running Instructions:
+  1. Call this script with the 3 required args, after typing 'bash' . You may
+     be prompt to enter your password to run script as super user.
+  2. Solve the morning problem without hassle of setting things up !
+
+Arguments:
+  1: path to the morning problem tar file
+  2: path to extract the morning problem too
+  3: corresponding morning problem number (chronological order)
+
+Notes:
+  -This script currently grabs the first tar file it sees in the specified
+   dir! MAKE SURE there are no other tar files in that dir.
+  -Do not add to/ change line 3 of the custom header as the script will
+   automatically erase this line and replace it with a current date/time stamp!
+
+IDEAS FOR IMPROVEMENT:
+ -Get 'input/ouput text from pdf (auto make test cases for - if(name == "main")
+ -Add script to user path so it doesnt need to be in current terminal dir
+ -Use selenium or some visual webscraper to grab the tar file from eclass
+   right when MDT (dont use sys time so people outside alberta can use this)
+   time hits 10:10am
+ -Add check to identify morning problem tar from other tars in same dir
+
+Noob bash notes:
+  -no spaces allowed around '=' when assigning variable a value
+  -args are referenced in bash by $1, $2, $3...etc.  $# returns num of args
+
+Updates:
+  09/28/2020
+    -Created README
+    -Added path arguements to script for tar extraction and morning prob num
+  10/11/2020
+    -Script can be placed in a dir by specified by user to be inlc. on $PATH
+    -Editted README
+    -Created git repo - shared project to Github
