@@ -42,7 +42,7 @@ if [ "$#" = "3" ]; then
       new_folder_name="mp${problem_num}_${problem_name}"
       mv "${extract_to_location}/${problem_name}" "${extract_to_location}/${new_folder_name}"
 
-      place the tar file in the new folder to clear clutter
+      #place the tar file in the new folder to clear clutter
       mv "${tar_location}/${file_name}" "${extract_to_location}/${new_folder_name}"
 
       #check if a pre-existing .py template is in the soln folder
